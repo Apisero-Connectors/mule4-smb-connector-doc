@@ -1,0 +1,250 @@
+= SMB Connector
+
+== ⦁    DOCUMENT REVISION HISTORY
+
+
+[%header%autowidth.spread]
+|===
+|Version  |Release Date |Revised by |Comments/ Indicate Sections Revised
+
+|2.0.0 |2020-04 |Connector Development Team |
+
+|===
+
+== ⦁    INTRODUCTION
+⦁   Purpose
+
+This specification document outlines the instructions for using SMB Connector operations (such as create directory, list directory contents, delete a directory, read a file, write a file, delete a file) against a Windows SMB share.
+
+⦁   Background
+
+SMB is a network protocol used by Windows-based computers that allows systems within the same network to share files. It allows computers connected to the same network or domain to access files from other local computers as easily as if they were on the computer's local hard drive.
+
+== ⦁	List of Operations Supported by the  SMB Connector:
+
+[%header%autowidth.spread]
+|===
+|Sr.No |Business Function |Operations |Description |Inbound |Outbound
+|1 |Directory create |POST Request |Create a new directory on the SMB share.|Required field is *Folder Name* |Return boolean response(true: Directory created, false: Directory not created)
+|2 |Directory list |GET Request |List the contents of a directory on the SMB share|*Folder Name* and *Wildcard* are optional parameters | Return Array of Strings
+|3 |Directory delete |DELETE Request |Delete a directory from the SMB share |Required field is *Directory Name* |Return boolean response(true: Directory deleted, false: Directory not deleted)
+|4 |File write |POST Request |Writes data out to a file |Required field is *File Name* |Return boolean response(true: Data created, false: Data not created)
+|5 |File read |GET Request |Reads the contents of a file from the SMB share |Required field is *File Name* |Return binary response
+|6 |File delete |DELETE Request |Delete a directory from the SMB share |Required field is *File Name* |Return boolean response(true: File deleted, false: File not deleted)
+|===
+
+==  ⦁   Configuration for SMB Connector
+To use SMB Connector, you will require the following configuration properties.
+
+    Domain: Enter a Windows domain for the user to log in with.
+
+    Host: Hostname of server hosting SMB share.
+
+    Share: Named path of the SMB share.
+
+    Username: Enter the username to log in with. Setting the value to "guest" indicates that guest connectivity should be used and no password is required. Setting the value to "anonymous" indicates that anonymous connectivity should be used and no password is required. These values are reserved to indicate these access types.
+
+    Password: Enter the corresponding password.
+
+    Connection timeout: Timeout for connection, in seconds.
+
+    File age: Age of file required to perform operations on it, in seconds.
+
+==  ⦁   To connect in Design Center
+
+⦁ In Design Centre, click Create and choose Mule Application.
+
+⦁ Click a trigger such as an HTTP Listener or the Scheduler trigger.
+
+image:img/HTTP_Listener_DesignCenter1.png[]
+
+⦁ To create an HTTP global element for the connector, set these fields:
+image:img/HTTP_Listener_DesignCenter.png[]
+
+[%header%autowidth.spread]
+|===
+|Field |Description
+|Protocol |Protocol selected for the HTTP connector, it can be HTTP or HTTPS (secure).
+|Host |IP address where your Mule application listens for requests.
+|Port |Port address where your Mule application listens for requests.
+|Base Path |Path where your Mule application listens for requests.
+|===
+
+⦁	Select the plus sign to add a component.
+
+⦁	Select the SMB Connector as a component.
+
+⦁	Select an operation:
+
+image:img/SMB_DesignCenter.png[]
+
+⦁	Configure the Global element for the connector:
+
+image:img/SMB_Configuration_DesignCenter.png[]
+
+image:img/SMB_Configuration_DesignCenter1.png[]
+
+image:img/SMB_Configuration_DesignCenter2.png[]
+
+image:img/SMB_Configuration_DesignCenter3.png[]
+
+⦁	Fill the required parameters (if any) for the above selected operation.
+
+==  ⦁   Use case – Connectivity with salesforce
+
+This use-case demonstrates the interaction between SMB and Salesforce systems using SMB connector. It utilises POST, GET and DELETE operations connectors.
+
+⦁ The flow gets created using "File Write" operation for creating the Employee details file, convert the file into csv format and create contact details of employee into Salesforce.
+
+⦁ Once the Employee details created into Salesforce, retrieve it from Salesforce object and store into another csv file of another directory using "File Write" and "Directory Create" components respectively.
+
+⦁ Then delete the employee details first from Salesforce after that delete the file from directory.
+
+For running this use-case we need following configurations as prerequisites:
+
+⦁ Drag and drop an HTTP Listener in the canvas.
+
+⦁ In the Listener properties, give a path you want to use to trigger the listener.
+
+⦁ Add a new Configuration as follows,
+
+image:img/HTTP_Listener_Config.png[]
+
+⦁ Test the connection and click on Okay.
+
+⦁ Make sure your mule palette has Salesforce and SMB modules. If you do not have Salesforce module in your palette, go to add module -> Salesforce and drag it to your palette.
+
+⦁ Now add configurations for SMB.
+
+⦁ Go to global-configurations.xml global elements -> create -> Connector Configuration -> SMB Configuration
+
+⦁ Add following properties.
+
+    Domain :
+    Host :
+    Share :
+    Username :
+    Password :
+    File age :
+    Connection Timeout :
+
+image:img/global_config.png[]
+
+image:img/global_config_socket_timeout.png[]
+
+image:img/global_config_advanced.png[]
+
+⦁	Add Salesforce configuration.
+
+⦁	Go to global-configurations.xml -> global elements -> create -> Connector Configuration -> Salesforce Configuration
+
+⦁	Add following properties
+
+image:img/salesforce_global_config.png[]
+
+⦁	Create a flow with the components displayed in the image below:
+
+image:img/create_employee_flow.png[]
+
+image:img/delete_employee_flow.png[]
+
+⦁	Individual mappings for each component are illustrated in below screenshots:
+
+-> Create Employee File
+
+image:img/create_file.png[]
+
+-> Directory create
+
+image:img/Directory_create.png[]
+
+-> File Read
+
+image:img/File_read.png[]
+
+-> Transform File
+
+image:img/Transform_File.png[]
+
+-> Create Employee Contacts into Salesforce Contact Object.
+
+   %dw 2.0
+output application/java
+---
+payload map ((item, index) ->
+{
+	LastName: item.LastName,
+	FirstName: item.FirstName,
+	Phone: item.Phone,
+	Email: item.Email
+}
+)
+
+image:img/Create_Salesforce.png[]
+
+-> Retrieve all contact details from Salesforce
+
+image:img/Retrieve_From_Salesforce.png[]
+
+-> Transform Salesforce data into csv
+
+image:img/Transform_into_csv.png[]
+
+-> Create details into new file of another directory
+
+image:img/Create_into_new_file.png[]
+
+⦁   deleteFlow
+
+-> Read the details from file
+
+image:img/Read_new_file.png[]
+
+-> Retrieve employee details from Salesforce by Name
+
+image:img/Retrieve_From_Salesforce_byName.png[]
+
+-> Delete salesforce details by Contact Id
+
+   %dw 2.0
+output application/java
+---
+(payload map ((item, index) ->
+{
+	Id: item.Id,
+	Name:item.Name
+})).Id
+
+image:img/Delete_From_Salesforce_by_Contact_Id.png[]
+
+-> Delete File
+
+image:img/Delete_File.png[]
+
+⦁	About Connector Namespace and Schema
+
+When designing your application in Studio, drag and drop the connector in your canvas and the Namespace and schema get populated in the config file as below,
+
+Namespace:   http://www.mulesoft.org/schema/mule/smb
+
+Schema Location:  http://www.mulesoft.org/schema/mule/smb/current/mule-smb.xsd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
