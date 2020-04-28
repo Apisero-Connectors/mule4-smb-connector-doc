@@ -23,8 +23,8 @@ To use SMB connector, you need
 [width="100%", options="header"]
 |=======
 |Application/Service |Version
-|Mule Runtime |4.x and later
-|Anypoint Studio | 7.x and later
+|Mule Runtime |4.2.x and later
+|Anypoint Studio | 7.3.x and later
 |=======
 
 == What's New in this Connector

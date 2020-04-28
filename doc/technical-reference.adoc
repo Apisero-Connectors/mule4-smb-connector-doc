@@ -67,6 +67,7 @@ To use SMB Connector, you will require the following configuration properties.
 image:img/HTTP_Listener_DesignCenter1.png[]
 
 ⦁ To create an HTTP global element for the connector, set these fields:
+
 image:img/HTTP_Listener_DesignCenter.png[]
 
 [%header%autowidth.spread]

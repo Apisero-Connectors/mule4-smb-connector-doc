@@ -7,7 +7,7 @@ _MuleSoft Certified_
 The SMB connector allows for connectivity to SMB v1, v2 & v3 shares and can be used in both on-premises and CloudHub environments.
 
 == Version 2.0.0 - 2020-04
-This release of SMB Connector is compatibile with Mule 4 and it is not compatible with Mule 3 versions.
+This release of SMB Connector is compatible with Mule 4, and it is not compatible with Mule 3 versions.
 
 == Version 2.0.0 - Compatibility
 The SMB Connector is compatible with these software versions:
@@ -15,8 +15,8 @@ The SMB Connector is compatible with these software versions:
 [%header%autowidth.spread]
 |===
 |Software |Version
-|Anypoint Studio |7.x
-|Mule |4.x and later
+|Anypoint Studio |7.3.x
+|Mule |4.2.x and later
 |JDK |1.8.x and later
 |SMB|1, 2 and 3
 |===
