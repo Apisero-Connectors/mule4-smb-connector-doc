@@ -4,6 +4,8 @@ MuleSoft Certified
 
 == About SMB
 
+*SMB* Stands for "Server Message Block." *SMB* is a network protocol used by Windows-based computers that allows systems within the same network to share files
+
 == About SMB Connector
 
 Anypoint Connector for SMB provides the capability to perform operations (such as create directory, list directory contents, delete a directory, read a file, write a file, delete a file) against a Windows SMB share.
@@ -16,7 +18,7 @@ To use SMB connector, you need
 
 * Anypoint Studio version 7.
 
-=== Mule Compatibility
+== Mule Compatibility
 
 [width="100%", options="header"]
 |=======
@@ -76,6 +78,7 @@ image::img/SMB_Config.png[]
 Here we are adding credentials to application properties file and reference it using placeholders.
 
 image::img/global_config.png[]
+
 image::img/global_config_timeout.png[]
 
 * Make a *Test Connection...* to check that the configuration is correct.

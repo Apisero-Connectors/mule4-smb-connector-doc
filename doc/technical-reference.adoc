@@ -6,9 +6,7 @@
 [%header%autowidth.spread]
 |===
 |Version  |Release Date |Revised by |Comments/ Indicate Sections Revised
-
 |2.0.0 |2020-04 |Connector Development Team |
-
 |===
 
 == ⦁    INTRODUCTION
@@ -20,7 +18,15 @@ This specification document outlines the instructions for using SMB Connector op
 
 SMB is a network protocol used by Windows-based computers that allows systems within the same network to share files. It allows computers connected to the same network or domain to access files from other local computers as easily as if they were on the computer's local hard drive.
 
-== ⦁	List of Operations Supported by the  SMB Connector:
+⦁   Overview
+
+The Server Message Block Protocol (SMB protocol) is a client-server communication protocol used for sharing access to files and other resources on a network. Anypoint Connector for SMB provides the capability to perform operations (such as create directory, list directory contents, delete a directory, read a file, write a file, delete a file) against a Windows SMB share.
+
+*A high-level diagram of the architecture is shown below*
+
+image::img/archectural_digram.png[]
+
+== ⦁	LIST OF OPERATIONS SUPPORTED BY THE SMB CONNECTOR:
 
 [%header%autowidth.spread]
 |===
@@ -33,7 +39,7 @@ SMB is a network protocol used by Windows-based computers that allows systems wi
 |6 |File delete |DELETE Request |Delete a directory from the SMB share |Required field is *File Name* |Return boolean response(true: File deleted, false: File not deleted)
 |===
 
-==  ⦁   Configuration for SMB Connector
+==  ⦁   CONFIGURATION FOR SMB CONNECTOR
 To use SMB Connector, you will require the following configuration properties.
 
     Domain: Enter a Windows domain for the user to log in with.
@@ -50,7 +56,9 @@ To use SMB Connector, you will require the following configuration properties.
 
     File age: Age of file required to perform operations on it, in seconds.
 
-==  ⦁   To connect in Design Center
+    Socket Timeout: Timeout for socket, in seconds.
+
+==  ⦁   TO CONNECT IN DESIGN CENTER
 
 ⦁ In Design Centre, click Create and choose Mule Application.
 
@@ -90,7 +98,7 @@ image:img/SMB_Configuration_DesignCenter3.png[]
 
 ⦁	Fill the required parameters (if any) for the above selected operation.
 
-==  ⦁   Use case – Connectivity with salesforce
+==  ⦁   USE CASE – CONNECTIVITY WITH SALESFORCE
 
 This use-case demonstrates the interaction between SMB and Salesforce systems using SMB connector. It utilises POST, GET and DELETE operations connectors.
 
@@ -127,6 +135,8 @@ image:img/HTTP_Listener_Config.png[]
     Password :
     File age :
     Connection Timeout :
+    Socket Timeout:
+
 
 image:img/global_config.png[]
 
@@ -148,25 +158,25 @@ image:img/create_employee_flow.png[]
 
 image:img/delete_employee_flow.png[]
 
-⦁	Individual mappings for each component are illustrated in below screenshots:
+⦁	*Individual mappings for each component are illustrated in below screenshots:*
 
--> Create Employee File
+*-> Create Employee File*
 
 image:img/create_file.png[]
 
--> Directory create
+*-> Directory create*
 
 image:img/Directory_create.png[]
 
--> File Read
+*-> File Read*
 
 image:img/File_read.png[]
 
--> Transform File
+*-> Transform File*
 
 image:img/Transform_File.png[]
 
--> Create Employee Contacts into Salesforce Contact Object.
+*-> Create Employee Contacts into Salesforce Contact Object*
 
    %dw 2.0
 output application/java
@@ -182,29 +192,29 @@ payload map ((item, index) ->
 
 image:img/Create_Salesforce.png[]
 
--> Retrieve all contact details from Salesforce
+*-> Retrieve all contact details from Salesforce*
 
 image:img/Retrieve_From_Salesforce.png[]
 
--> Transform Salesforce data into csv
+*-> Transform Salesforce data into csv*
 
 image:img/Transform_into_csv.png[]
 
--> Create details into new file of another directory
+*-> Create details into new file of another directory*
 
 image:img/Create_into_new_file.png[]
 
-⦁   deleteFlow
+⦁   *deleteFlow*
 
--> Read the details from file
+*-> Read the details from file*
 
 image:img/Read_new_file.png[]
 
--> Retrieve employee details from Salesforce by Name
+*-> Retrieve employee details from Salesforce by Name*
 
 image:img/Retrieve_From_Salesforce_byName.png[]
 
--> Delete salesforce details by Contact Id
+*-> Delete salesforce details by Contact Id*
 
    %dw 2.0
 output application/java
@@ -217,17 +227,22 @@ output application/java
 
 image:img/Delete_From_Salesforce_by_Contact_Id.png[]
 
--> Delete File
+*-> Delete File*
 
 image:img/Delete_File.png[]
 
-⦁	About Connector Namespace and Schema
+
+⦁   *Install Metrc Connector in Anypoint Studio*
+
+link:user-manual.adoc[]
+
+⦁	*About Connector Namespace and Schema*
 
 When designing your application in Studio, drag and drop the connector in your canvas and the Namespace and schema get populated in the config file as below,
 
-Namespace:   http://www.mulesoft.org/schema/mule/smb
+*Namespace:*   http://www.mulesoft.org/schema/mule/smb
 
-Schema Location:  http://www.mulesoft.org/schema/mule/smb/current/mule-smb.xsd
+*Schema Location:*  http://www.mulesoft.org/schema/mule/smb/current/mule-smb.xsd
 
 
 
