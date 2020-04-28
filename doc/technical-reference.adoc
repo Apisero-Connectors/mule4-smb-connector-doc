@@ -10,15 +10,15 @@
 |===
 
 == ⦁    INTRODUCTION
-⦁   Purpose
+⦁   *Purpose*
 
 This specification document outlines the instructions for using SMB Connector operations (such as create directory, list directory contents, delete a directory, read a file, write a file, delete a file) against a Windows SMB share.
 
-⦁   Background
+⦁   *Background*
 
 SMB is a network protocol used by Windows-based computers that allows systems within the same network to share files. It allows computers connected to the same network or domain to access files from other local computers as easily as if they were on the computer's local hard drive.
 
-⦁   Overview
+⦁   *Overview*
 
 The Server Message Block Protocol (SMB protocol) is a client-server communication protocol used for sharing access to files and other resources on a network. Anypoint Connector for SMB provides the capability to perform operations (such as create directory, list directory contents, delete a directory, read a file, write a file, delete a file) against a Windows SMB share.
 
@@ -108,7 +108,7 @@ This use-case demonstrates the interaction between SMB and Salesforce systems us
 
 ⦁ Then delete the employee details first from Salesforce after that delete the file from directory.
 
-For running this use-case we need following configurations as prerequisites:
+*For running this use-case we need following configurations as prerequisites:*
 
 ⦁ Drag and drop an HTTP Listener in the canvas.
 
@@ -232,7 +232,7 @@ image:img/Delete_From_Salesforce_by_Contact_Id.png[]
 image:img/Delete_File.png[]
 
 
-⦁   *Install Metrc Connector in Anypoint Studio*
+⦁   *Install SMB Connector in Anypoint Studio*
 
 link:user-manual.adoc[]
 

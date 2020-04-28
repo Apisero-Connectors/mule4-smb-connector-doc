@@ -79,7 +79,7 @@ Here we are adding credentials to application properties file and reference it u
 
 image::img/global_config.png[]
 
-image::img/global_config_timeout.png[]
+image::img/global_config_socket_timeout.png[]
 
 * Make a *Test Connection...* to check that the configuration is correct.
 
@@ -98,7 +98,7 @@ image:img/global_config_test_connection.png[]
 
 == ​To Create a Mule Project in Anypoint Studio 7
 
-The SMB connector is an operation-based connector, which means that when you add the connector to your flow, you need to configure a specific operation the connector is intended to perform. Below is the "Directory Create" operation for better understanding
+The SMB connector is an operation-based connector, which means that when you add the connector to your flow, you need to configure a specific operation the connector is intended to perform. Below is the *"Directory Create"* operation for better understanding
 
 * Create new Mule Application in Studio and configure *HTTP Listener* to port 8081.
 

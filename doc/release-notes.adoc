@@ -9,7 +9,7 @@ The SMB connector allows for connectivity to SMB v1, v2 & v3 shares and can be u
 == Version 2.0.0 - 2020-04
 This release of SMB Connector is compatibile with Mule 4 and it is not compatible with Mule 3 versions.
 
-=== Version 2.0.0 - Compatibility
+== Version 2.0.0 - Compatibility
 The SMB Connector is compatible with these software versions:
 
 [%header%autowidth.spread]
@@ -21,18 +21,6 @@ The SMB Connector is compatible with these software versions:
 |SMB|1, 2 and 3
 |===
 
-=== Version 2.0.0 - New features
-* This is a bug fix release
 
-=== Version 2.0.0 - Fixed in this release
-* Resolved issue 18 - Connector now disconnects the session after each action
-* Resolved issue 15 - SMBv3 is supported through the use of SMBJ v0.10.0
 
-=== Version 2.0.0 - Required Libraries
 
-* SMBJ 0.10.0 is pre-packaged with the connector
-
-=== Version 2.0.0 - Known issues
-
-* Streaming is currently not supported
-* Metadata for file content is currently not supported
