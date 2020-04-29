@@ -52,11 +52,11 @@ To use SMB Connector, you will require the following configuration properties.
 
     Password: Enter the corresponding password.
 
-    Connection timeout: Timeout for connection, in seconds.
+    Connection timeout: Timeout for connection, in Seconds(Default).
 
-    File age: Age of file required to perform operations on it, in seconds.
+    File age: Age of file required to perform operations on it, in Seconds(Default).
 
-    Socket Timeout: Timeout for socket, in seconds.
+    Socket Timeout: Timeout for socket, in Seconds(Default).
 
 ==  ⦁   TO CONNECT IN DESIGN CENTER
 

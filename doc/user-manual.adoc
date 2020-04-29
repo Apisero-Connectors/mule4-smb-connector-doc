@@ -69,13 +69,14 @@ image::img/SMB_Config.png[]
 |Share              |Named path of the SMB share.
 |Username           |Enter the username to log in with. Setting the value to "guest" indicates that guest connectivity should be used and no password is required. Setting the value to "anonymous" indicates that anonymous connectivity should be used and no password is required. These values are reserved to indicate these access types.
 |Password           |Enter the corresponding password.
-|File Age           |Age of file required to perform operations on it, in milliseconds.
-|Connection timeout |Timeout for connection, in milliseconds.
+|File Age           |Age of file required to perform operations on it, in Seconds(Default).
+|Connection Timeout |Timeout for connection, in Seconds(Default).
+|Socket Timeout     |Timeout for the socket, in Seconds(Default).
 |============
 +
 
-* Credentials can be directly entered into the global configuration properties, or reference from a configuration file that contains these values.
-Here we are adding credentials to application properties file and reference it using placeholders.
+* Parameter values can be directly entered into the global configuration properties, or reference from a configuration file that contains these values.
+Here we are adding values to application properties file and reference it using placeholders.
 
 image::img/global_config.png[]
 
@@ -91,14 +92,14 @@ image:img/global_config_test_connection.png[]
 +
 ```xml
     <smb:config name="SMB_Connector_Config" doc:name="SMB Connector Config" doc:id="d6b5ce20-7876-4bc5-8ad5-b0b8931590f1" >
-		<smb:connection domain="${domain}" host="${host}" share="${share}" username="${username}" password="${password}" connectionTimeout="${timeout}" fileAge="${fileage}" fileAgeUnit="MILLISECONDS" connectionTimeoutUnit="MILLISECONDS" socketTimeout="30000" socketTimeoutUnit="MILLISECONDS"/>
+		<smb:connection domain="${domain}" host="${host}" share="${share}" username="${username}" password="${password}" connectionTimeout="${timeout}" fileAge="${fileage}" fileAgeUnit="SECONDS" connectionTimeoutUnit="SECONDS" socketTimeout="30000" socketTimeoutUnit="SECONDS"/>
 	</smb:config>
 ```
 
 
 == ​To Create a Mule Project in Anypoint Studio 7
 
-The SMB connector is an operation-based connector, which means that when you add the connector to your flow, you need to configure a specific operation the connector is intended to perform. Below is the *"Directory Create"* operation for better understanding
+The SMB connector is an operation-based connector, which means that when you add the connector to your flow, you need to configure a specific operation the connector is intended to perform. Below is the *"Directory Create"* operation for better understanding.
 
 * Create new Mule Application in Studio and configure *HTTP Listener* to port 8081.
 
