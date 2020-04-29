@@ -24,7 +24,7 @@ The SMB Connector is compatible with these software versions:
 === Version 2.0.0 - Features
 
 * Smb connector is compatible with Mule 4
-* The below operations supported by Smb Connector
+* The below operations are supported by Smb Connector
 * Directory create
 * Directory list
 * Directory delete
