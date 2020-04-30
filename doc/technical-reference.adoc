@@ -141,7 +141,7 @@ image:img/HTTP_Listener_Config.png[]
 
 image:img/global_config.png[]
 
-image:img/global_config_socket_timeout.png[]
+image:img/global_config_timeout.png[]
 
 image:img/global_config_advanced.png[]
 

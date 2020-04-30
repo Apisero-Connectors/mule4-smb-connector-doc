@@ -80,7 +80,7 @@ Here we are adding values to application properties file and reference it using 
 
 image::img/global_config.png[]
 
-image::img/global_config_socket_timeout.png[]
+image::img/global_config_timeout.png[]
 
 * Make a *Test Connection...* to check that the configuration is correct.
 
@@ -117,7 +117,7 @@ image::img/directoryCreateParametersWithoutDetails.png[]
 
 image::img/global_config.png[]
 
-image::img/global_config_socket_timeout.png[]
+image::img/global_config_timeout.png[]
 
 * Make sure to test your connection, if you have add new connection details.
 * Enter required details for *Directory Create* operation and save.
