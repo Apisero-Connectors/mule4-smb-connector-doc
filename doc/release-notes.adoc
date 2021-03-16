@@ -21,12 +21,16 @@ The SMB Connector is compatible with these software versions:
 |SMB|1, 2 and 3
 |===
 
-This release provides below fixes:
+Release 2.0.1 provides below fixes:
 |===
 |1] Support DFS
 |2] Access mask set to Maximim Allowed for read and write operation
 |3] Process stuck issue after file read with delete file flag set to true is fixed
+|===
 
+This release provides below fixes:
+|===
+|1] Move operation added.
 
 
 
