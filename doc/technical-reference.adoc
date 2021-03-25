@@ -37,31 +37,7 @@ image::img/archectural_digram.png[]
 |4 |File write |POST Request |Writes data out to a file |Required field is *File Name* |Return boolean response(true: Data created, false: Data not created)
 |5 |File read |GET Request |Reads the contents of a file from the SMB share |Required field is *File Name* |Return binary response
 |6 |File delete |DELETE Request |Delete a directory from the SMB share |Required field is *File Name* |Return boolean response(true: File deleted, false: File not deleted)
-|7 |File Move | GET Request |Moves a file from source location in share to destination location of same share|  Required field is *File Name* | Return boolean response(true: File moved, false: File not moved)
 |===
-
-==  ⦁ DIRECTORY LIST
-
-- Use * has wildcard to get all list for folder and files present.
-
-- Wildcard supports all DOS style wildcard filter.
-
-
-==  ⦁   FILE MOVE
-- File name - Name of the file to be moved.
-
-- Source Directory - Location where file is present. (If null , will consider root location as default)
-
-- Destination Directory - Location where file is to be moved.(If null , will consider root location as default)
-
-- RenameTo - Will rename the file name after moving in destination directory. (If null , original file name will be preserved)
-
-- Create target directory - If true it will check if directory exist or not , if not will create the destination directory. (Parent directory should be present if not it will throw an error OBJECT_PATH_NOT_FOUND) Example -
-> if user has given this path in destination directory a/b/c and create target directory is true in that case a/b should be present to create c.
-
-- Overwrite - If true it will check for the file to  overwrite , if not found will create a file. If false file should not be present with the same name.
-
-- Auto Delete - If true , it will delete from source and if false it won't delete.
 
 ==  ⦁   CONFIGURATION FOR SMB CONNECTOR
 To use SMB Connector, you will require the following configuration properties.
