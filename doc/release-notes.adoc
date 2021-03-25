@@ -1,15 +1,15 @@
 = SMB Connector Release Notes 
 
-April 2021
+Jan 2021
 
 _MuleSoft Certified_
 
 The SMB connector allows for connectivity to SMB v1, v2 & v3 shares and can be used in both on-premises and CloudHub environments.
 
-== Version 2.1.0 - 2021-01
+== Version 2.0.1 - 2021-01
 This release of SMB Connector is compatible with Mule 4, and it is not compatible with Mule 3 versions.
 
-== Version 2.1.0 - Compatibility
+== Version 2.0.1 - Compatibility
 The SMB Connector is compatible with these software versions:
 
 [%header%autowidth.spread]
@@ -28,7 +28,7 @@ Release 2.0.1 provides below fixes:
 |3] Process stuck issue after file read with delete file flag set to true is fixed
 |===
 
-Release 2.1.0 provides below support including v2.0.1 fixes :
+Release 2.1.0 provides below support:
 |===
 |1] Move operation.
 
