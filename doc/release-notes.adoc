@@ -28,9 +28,9 @@ Release 2.0.1 provides below fixes:
 |3] Process stuck issue after file read with delete file flag set to true is fixed
 |===
 
-Release 2.1.0 provides below support:
+This release provides below fixes:
 |===
-|1] Move operation.
+|1] Move operation added.
 
 
 
