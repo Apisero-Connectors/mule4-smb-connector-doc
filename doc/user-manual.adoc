@@ -8,7 +8,7 @@ MuleSoft Certified
 
 == About SMB Connector
 
-Anypoint Connector for SMB provides the capability to perform operations (such as create directory, list directory contents, delete a directory, read a file, write a file, delete a file) against a Windows SMB share.
+Anypoint Connector for SMB provides the capability to perform operations (such as create directory, list directory contents, delete a directory, read a file, write a file, delete a file,move a file) against a Windows SMB share.
 
 == Prerequisites
 This document assumes that you are familiar with Mule, Anypoint Connectors,
@@ -29,7 +29,7 @@ To use SMB connector, you need
 
 == What's New in this Connector
 
-* This SMB connector 2.0.0 is compatible with Mule 4.
+* This SMB connector 2.1.0 is compatible with Mule 4.
 
 == To Install this Connector in Anypoint Studio 7
 You can use SMB Connector in Anypoint Studio by adding it as a dependency in your Mule application.
