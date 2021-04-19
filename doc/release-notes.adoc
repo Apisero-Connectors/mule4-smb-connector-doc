@@ -26,12 +26,97 @@ Release 2.1.0 provides below fixes:
 |1] Move operation added.
 |===
 
-Release 2.0.1 provides below fixes:
+Version 2.0.1 provides below fixes:
 |===
 |1] Support DFS
 |2] Access mask set to Maximum Allowed for read and write operation
 |3] Process stuck issue after file read with delete file flag set to true is fixed
 |===
+
+=== Version 2.0.0 - New features
+* This is a bug fix release
+
+=== Version 2.0.0 - Fixed in this release
+* Resolved issue 18 - Connector now disconnects the session after each action
+* Resolved issue 15 - SMBv3 is supported through the use of SMBJ v0.10.0
+
+=== Version 2.0.0 - Required Libraries
+
+* SMBJ 0.10.0 is pre-packaged with the connector
+
+=== Version 2.0.0 - Known issues
+
+* Streaming is currently not supported
+* Metadata for file content is currently not supported
+
+
+== Version 1.2.0 - 2019-09
+
+=== Version 1.2.0 - Compatibility
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Anypoint Studio |6.x
+|Mule |3.8 and later
+|JDK |1.7.x and later
+|SMB|1 and 2
+|===
+
+=== Version 1.2.0 - New features
+* Connector is now MuleSoft certified
+* Migrated connector to use SMBJ as the previous used JCIFS library is no longer maintained
+* File age parameter is now a global connector setting
+* Added option for anonymous connectivity
+* Added option for guest connectivity
+
+=== Version 1.2.0 - Fixed in this release
+* Resolved issue #10 - file age parameter observed for directory list operation
+* Resolved issue #9 - file age parameter observed for file delete operation 
+* Resolved issue #8 - connectivity to public shares
+* Resolved issue #6 - wildcard for directory list 
+
+=== Version 1.2.0 - Required Libraries
+
+* SMBJ 0.9.1 is pre-packaged with the connector
+
+=== Version 1.2.0 - Known issues
+
+* Streaming is currently not supported
+* Samba provides no way to “disconnect” from a resource, but it naturally times out after 15 secs of no activity
+
+== Version 1.1.0 - Unreleased
+
+== Version 1.0.0 - 2018-05
+
+=== Version 1.0.0 - Compatibility
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Anypoint Studio |6.x
+|Mule |3.8 and later
+|JDK |1.7.x and later
+|SMB|1 and 2
+|===
+
+=== Version 1.0.0
+This initial release of the Connector includes the following operations:
+
+* Read a file (Optional file delete upon read completion)
+* Write a file (Optionally append an existing file)
+* Delete a file
+* Create a directory
+* List directory contents
+* Delete a directory
+
+=== Version 1.0.0 - Required Libraries
+
+* JCIFS library v1.3.19
+
+=== Version 1.0.0 - Known issues
+
+* Streaming is currently not supported in DevKit 3.9 (current edition)
+* The underlying JCIFS library cannot be distributed with the connector, the .jar driver can be downloaded from https://jcifs.samba.org/
+* Samba provides no way to “disconnect” from a resource, but it naturally times out after 15 secs of no activity
 
 
 
