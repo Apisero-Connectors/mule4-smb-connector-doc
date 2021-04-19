@@ -26,7 +26,7 @@ Release 2.1.0 provides below fixes:
 |1] Move operation added.
 |===
 
-Version 2.0.1 provides below fixes:
+=== Version 2.0.1 provides below fixes:
 |===
 |1] Support DFS
 |2] Access mask set to Maximum Allowed for read and write operation
