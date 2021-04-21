@@ -24,6 +24,7 @@ The SMB Connector is compatible with these software versions:
 Release 2.1.0 provides below fixes:
 |===
 |1] Move operation added.
+|2] Access mask set to GENERIC_READ for read operation.
 |===
 
 === Version 2.0.1 provides below fixes:
