@@ -4,7 +4,7 @@ April 2021
 
 _MuleSoft Certified_
 
-The SMB connector allows for connectivity to SMB v1, v2 shares and can be used in both on-premises and CloudHub environments.
+The SMB connector allows for connectivity to SMB v2 shares and can be used in both on-premises and CloudHub environments.
 
 == Version 2.1.0 - 2021-04
 This release of SMB Connector is compatible with Mule 4, and it is not compatible with Mule 3 versions.
