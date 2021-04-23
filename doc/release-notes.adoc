@@ -60,7 +60,7 @@ Release 2.1.0 provides below fixes:
 |Anypoint Studio |6.x
 |Mule |3.8 and later
 |JDK |1.7.x and later
-|SMB|1 and 2
+|SMB| SMB_2_1 and SMB_2_0_2
 |===
 
 === Version 1.2.0 - New features
