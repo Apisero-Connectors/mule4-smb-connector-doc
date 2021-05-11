@@ -20,7 +20,7 @@ SMB is a network protocol used by Windows-based computers that allows systems wi
 
 ⦁   *Overview*
 
-The Server Message Block Protocol (SMB protocol) is a client-server communication protocol used for sharing access to files and other resources on a network. Anypoint Connector for SMB provides the capability to perform operations (such as create directory, list directory contents, delete a directory, read a file, write a file, delete a file) against a Windows SMB share.
+The Server Message Block Protocol (SMB protocol) is a client-server communication protocol used for sharing access to files and other resources on a network. Anypoint Connector for SMB provides the capability to perform operations (such as create directory, list directory contents, delete a directory, read a file, write a file, delete a file, move a file) against a Windows SMB share.
 
 *A high-level diagram of the architecture is shown below*
 
