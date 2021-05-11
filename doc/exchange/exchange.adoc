@@ -7,6 +7,7 @@ This Certified SMB Connector provides the capability to perform operations again
 - file writing
 - file deletion
 - file move
+
 The connector supports:
 
 - SMB version 1, 2 & 3
