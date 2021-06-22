@@ -6,7 +6,7 @@
 [%header%autowidth.spread]
 |===
 |Version  |Release Date |Revised by |Comments/ Indicate Sections Revised
-|2.1.0 |2021-04 |Connector Development Team |
+|2.1.1 |2021-06 |Connector Development Team |
 |===
 
 == ⦁    INTRODUCTION

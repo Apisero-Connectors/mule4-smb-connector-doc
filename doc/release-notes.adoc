@@ -1,15 +1,15 @@
 = SMB Connector Release Notes 
 
-April 2021
+June 2021
 
 _MuleSoft Certified_
 
 The SMB connector allows for connectivity to SMB v2 shares and can be used in both on-premises and CloudHub environments.
 
-== Version 2.1.0 - 2021-04
+== Version 2.1.1 - 2021-06
 This release of SMB Connector is compatible with Mule 4, and it is not compatible with Mule 3 versions.
 
-== Version 2.1.0 - Compatibility
+== Version 2.1.1 - Compatibility
 The SMB Connector is compatible with these software versions:
 
 [%header%autowidth.spread]
@@ -18,10 +18,17 @@ The SMB Connector is compatible with these software versions:
 |Anypoint Studio |7.3.x
 |Mule |4.2.x and later
 |JDK |1.8.x and later
-|SMB| SMB_2_1 and SMB_2_0_2
+|SMB|SMB_2_1 and SMB_2_0_2
 |===
 
-Release 2.1.0 provides below fixes:
+=== Release 2.1.1 provides below fixes:
+|===
+|1] Read operation code fixed for "Disk share already closed" error.
+|===
+
+
+
+=== Release 2.1.0 provides below fixes:
 |===
 |1] Move operation added.
 |2] Access mask set to GENERIC_READ for read operation.
@@ -60,7 +67,7 @@ Release 2.1.0 provides below fixes:
 |Anypoint Studio |6.x
 |Mule |3.8 and later
 |JDK |1.7.x and later
-|SMB| 1 and 2
+|SMB|1 and 2
 |===
 
 === Version 1.2.0 - New features
@@ -72,9 +79,9 @@ Release 2.1.0 provides below fixes:
 
 === Version 1.2.0 - Fixed in this release
 * Resolved issue #10 - file age parameter observed for directory list operation
-* Resolved issue #9 - file age parameter observed for file delete operation 
+* Resolved issue #9 - file age parameter observed for file delete operation
 * Resolved issue #8 - connectivity to public shares
-* Resolved issue #6 - wildcard for directory list 
+* Resolved issue #6 - wildcard for directory list
 
 === Version 1.2.0 - Required Libraries
 
@@ -83,7 +90,7 @@ Release 2.1.0 provides below fixes:
 === Version 1.2.0 - Known issues
 
 * Streaming is currently not supported
-* Samba provides no way to “disconnect” from a resource, but it naturally times out after 15 secs of no activity
+* Samba provides no way to ?disconnect? from a resource, but it naturally times out after 15 secs of no activity
 
 == Version 1.1.0 - Unreleased
 
@@ -117,9 +124,4 @@ This initial release of the Connector includes the following operations:
 
 * Streaming is currently not supported in DevKit 3.9 (current edition)
 * The underlying JCIFS library cannot be distributed with the connector, the .jar driver can be downloaded from https://jcifs.samba.org/
-* Samba provides no way to “disconnect” from a resource, but it naturally times out after 15 secs of no activity
-
-
-
-
-
+* Samba provides no way to ?disconnect? from a resource, but it naturally times out after 15 secs of no activity

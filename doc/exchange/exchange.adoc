@@ -6,11 +6,11 @@ This Certified SMB Connector provides the capability to perform operations again
 - file reading
 - file writing
 - file deletion
-- file move
+- file moving
 
 The connector supports:
 
-- SMB version 1, 2 & 3
+- SMB version SMB_2_1 and SMB_2_0_2
 
 ---
 
