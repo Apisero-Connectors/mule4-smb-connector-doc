@@ -46,7 +46,7 @@ The SMB Connector is compatible with these software versions:
 
 === Version 2.0.0 - Fixed in this release
 * Resolved issue 18 - Connector now disconnects the session after each action
-* Resolved issue 15 - SMBv3 is supported through the use of SMBJ v0.10.0
+* Resolved issue 15 - SMBv3 is not supported through the use of SMBJ v0.10.0
 
 === Version 2.0.0 - Required Libraries
 
