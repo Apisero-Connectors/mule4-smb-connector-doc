@@ -1,6 +1,6 @@
 = SMB Connector Release Notes 
 
-June 2021
+October 2022
 
 _MuleSoft Certified_
 
@@ -16,7 +16,7 @@ The SMB Connector is compatible with these software versions:
 |===
 |Software |Version
 |Anypoint Studio |7.3.x
-|Mule |4.2.x and later
+|Mule |4.3.x and later
 |JDK |1.8.x and later
 |SMB|SMB_2_1 and SMB_2_0_2
 |===
