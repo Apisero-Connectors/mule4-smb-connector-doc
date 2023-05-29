@@ -29,7 +29,7 @@ To use SMB connector, you need
 
 == What's New in this Connector
 
-* This SMB connector 3.0.0 is compatible with Mule 4.
+* This SMB connector 3.1.0 comes prepacked with updated SMBJ version (0.10.0 -> 0.11.5) and resolved Access Mask related issues for File Write and File Move Operation.
 
 == To Install this Connector in Anypoint Studio 7
 You can use SMB Connector in Anypoint Studio by adding it as a dependency in your Mule application.
@@ -41,7 +41,7 @@ You can use SMB Connector in Anypoint Studio by adding it as a dependency in you
 <dependency>
     <groupId>com.mulesoft.connectors</groupId>
     <artifactId>mule-smb-connector</artifactId>
-    <version>3.0.0</version>
+    <version>3.1.0</version>
     <classifier>mule-plugin</classifier>
 </dependency>
 ```
