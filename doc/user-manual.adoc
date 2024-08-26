@@ -23,13 +23,16 @@ To use SMB connector, you need
 [width="100%", options="header"]
 |=======
 |Application/Service |Version
-|Mule Runtime |4.3.x and later
-|Anypoint Studio | 7.3.x and later
+|Mule Runtime |4.6.x and later
+|Anypoint Studio | 7.17.x and later
 |=======
 
 == What's New in this Connector
 
-* This SMB connector 3.1.1 resolved Access Mask related issues for File Write and File Move Operation.
+* This SMB connector 4.0.0 has been upgraded to support java 17.
+* The Encrypt Data boolean parameter has been added for SMB trafiic encryption in the Server.
+* File Read operation now shows the MIME Type tab and list of supported mime-types.
+* Java Heap Memory Issue for large file write has been resolved.
 
 == To Install this Connector in Anypoint Studio 7
 You can use SMB Connector in Anypoint Studio by adding it as a dependency in your Mule application.
@@ -41,7 +44,7 @@ You can use SMB Connector in Anypoint Studio by adding it as a dependency in you
 <dependency>
     <groupId>com.mulesoft.connectors</groupId>
     <artifactId>mule-smb-connector</artifactId>
-    <version>3.1.1</version>
+    <version>4.0.0</version>
     <classifier>mule-plugin</classifier>
 </dependency>
 ```
@@ -72,6 +75,7 @@ image::img/SMB_Config.png[]
 |File Age           |Age of file required to perform operations on it, in Seconds(Default).
 |Connection Timeout |Timeout for connection, in Seconds(Default).
 |Socket Timeout     |Timeout for the socket, in Seconds(Default).
+|Encrypt Data       |Boolean value for SMB traffic encryption, False(Default).
 |============
 +
 
@@ -92,7 +96,7 @@ image:img/global_config_test_connection.png[]
 +
 ```xml
     <smb:config name="SMB_Connector_Config" doc:name="SMB Connector Config" doc:id="d6b5ce20-7876-4bc5-8ad5-b0b8931590f1" >
-		<smb:connection domain="${domain}" host="${host}" share="${share}" username="${username}" password="${password}" connectionTimeout="${timeout}" fileAge="${fileage}" fileAgeUnit="SECONDS" connectionTimeoutUnit="SECONDS" socketTimeout="30000" socketTimeoutUnit="SECONDS"/>
+		<smb:connection domain="${domain}" host="${host}" share="${share}" username="${username}" password="${password}" connectionTimeout="${timeout}" fileAge="${fileage}" fileAgeUnit="SECONDS"  encryptData="true" connectionTimeoutUnit="SECONDS" socketTimeout="30000" socketTimeoutUnit="SECONDS"/>
 	</smb:config>
 ```
 

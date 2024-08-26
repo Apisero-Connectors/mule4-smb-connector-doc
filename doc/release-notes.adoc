@@ -1,10 +1,34 @@
 = SMB Connector Release Notes 
 
-June 2023
+July 2024
 
 _MuleSoft Certified_
 
 The SMB connector allows for connectivity to SMB v2, v3 shares and can be used in both on-premises and CloudHub environments.
+
+== Version 4.0.0 - 2024-07
+This release of SMB Connector is compatible with Mule 4, and it is not compatible with Mule 3 versions.
+
+== Version 4.0.0 - Compatibility
+The SMB Connector is compatible with these software versions:
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Anypoint Studio |7.17.x
+|Mule |4.6.x and later
+|JDK |1.8.x and later
+|SMB|SMB 2 and 3
+|===
+
+=== Release 4.0.0 provides below feature/fixs:
+|===
+|1] Upgraded connector to support java 17.
+|2] SMBJ version upgraded from 0.10.0 to 0.12.2.
+|3] Resolved Java Heap Memory issue for large file write.
+|4] Added encryptData boolean parameter for SMB traffic encryption in the server.
+|5] File Read operation now shows the MIME Type tab and list of supported mime-types.
+|===
 
 == Version 3.1.1 - 2023-06
 This release of SMB Connector is compatible with Mule 4, and it is not compatible with Mule 3 versions.
