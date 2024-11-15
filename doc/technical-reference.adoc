@@ -8,6 +8,7 @@
 |Version  |Release Date |Revised by |Comments/ Indicate Sections Revised
 |3.0.0 |2022-09 |Connector Development Team |
 |3.1.0 |2023-05 |Connector Development Team |
+|4.0.0 |2024-11 |Connector Development Team |
 |===
 
 == ⦁    INTRODUCTION
