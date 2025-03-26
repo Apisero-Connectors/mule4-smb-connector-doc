@@ -6,10 +6,10 @@ _MuleSoft Certified_
 
 The SMB connector allows for connectivity to SMB v2, v3 shares and can be used in both on-premises and CloudHub environments.
 
-== Version 4.0.0 - 2024-11
+== Version 4.0.1 - 2025-03
 This release of SMB Connector is compatible with Mule 4, and it is not compatible with Mule 3 versions.
 
-== Version 4.0.0 - Compatibility
+== Version 4.0.1 - Compatibility
 The SMB Connector is compatible with these software versions:
 
 [%header%autowidth.spread]
@@ -19,6 +19,13 @@ The SMB Connector is compatible with these software versions:
 |Mule |4.6.x and later
 |JDK |1.8.x and later
 |SMB|SMB 2 and 3
+|===
+
+=== Release 4.0.1 provides below feature/fixs:
+|===
+|1] SMBJ version upgraded from 0.12.2 to 0.14.0 resolving Bouncy Castle vulnerability.
+|2] Capability to invalidate connection cache and re-establish a new connection during connection exceptions has been added.
+|3] Resolved Different server found for same hostname issue.
 |===
 
 === Release 4.0.0 provides below feature/fixs:

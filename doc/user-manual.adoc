@@ -29,10 +29,13 @@ To use SMB connector, you need
 
 == What's New in this Connector
 
-* This SMB connector 4.0.0 has been upgraded to support java 17.
+* This SMB connector 4.0.1 has been upgraded to support java 17.
 * The Encrypt Data boolean parameter has been added for SMB trafiic encryption in the Server.
 * File Read operation now shows the MIME Type tab and list of supported mime-types.
 * Java Heap Memory Issue for large file write has been resolved.
+* Bouncy Castle vulnerability issue has been resolved.
+* Capability to invalidate connection cache and re-establish a new connection during connection exceptions has been added.
+* Resolved Different server found for same hostname issue.
 
 == To Install this Connector in Anypoint Studio 7
 You can use SMB Connector in Anypoint Studio by adding it as a dependency in your Mule application.
@@ -44,7 +47,7 @@ You can use SMB Connector in Anypoint Studio by adding it as a dependency in you
 <dependency>
     <groupId>com.mulesoft.connectors</groupId>
     <artifactId>mule-smb-connector</artifactId>
-    <version>4.0.0</version>
+    <version>4.0.1</version>
     <classifier>mule-plugin</classifier>
 </dependency>
 ```
